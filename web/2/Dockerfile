@@ -2,9 +2,9 @@ FROM centos:centos7
 
 RUN yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-RUN yum-config-manager --enable remi-php70 -y
+RUN yum-config-manager --enable remi-php71 -y
 
-# INSTALL APACHE AND PHP PACKAGES (Apache 2.4 & PHP 7.0)
+# INSTALL APACHE AND PHP PACKAGES (Apache 2.4 & PHP 7)
 RUN	yum -y update \
 	&& yum --setopt=tsflags=nodocs -y install \
 	php \

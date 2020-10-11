@@ -4,6 +4,8 @@ services:
     apache_img_1:
         container_name: ${COMPOSE_PROJECT_NAME}_apache_con_1
         build: ./web/1
+        volumes:
+            - .:/var/www/html
         expose:
             - ${APACHE_EXPOSED_PORT}
         networks:
@@ -11,7 +13,9 @@ services:
                 ipv4_address: ${APACHE_1_IP}
     apache_img_2:
         container_name: ${COMPOSE_PROJECT_NAME}_apache_con_2
-        build: ./web/2
+        build: ./web/1
+        volumes:
+            - .:/var/www/html
         expose:
             - ${APACHE_EXPOSED_PORT}
         networks:
@@ -20,7 +24,9 @@ services:
 
     apache_img_3:
         container_name: ${COMPOSE_PROJECT_NAME}_apache_con_3
-        build: ./web/3
+        build: ./web/1
+        volumes:
+            - .:/var/www/html
         expose:
             - ${APACHE_EXPOSED_PORT}
         networks:
